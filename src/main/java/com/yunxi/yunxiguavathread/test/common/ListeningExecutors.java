@@ -1,4 +1,4 @@
-package com.yunxi.yunxiguavathread.test.listenablefuture;
+package com.yunxi.yunxiguavathread.test.common;
 
 import com.google.common.util.concurrent.ListeningExecutorService;
 import com.google.common.util.concurrent.MoreExecutors;

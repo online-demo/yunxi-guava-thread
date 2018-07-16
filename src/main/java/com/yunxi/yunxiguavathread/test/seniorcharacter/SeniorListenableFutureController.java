@@ -1,6 +1,7 @@
 package com.yunxi.yunxiguavathread.test.seniorcharacter;
 
 import com.google.common.util.concurrent.*;
+import com.yunxi.yunxiguavathread.test.common.FutureCallBackTask;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,8 +48,8 @@ public class SeniorListenableFutureController {
         ListenableFuture future2 = listeningExecutorService.submit(() -> {
             Thread.sleep(10000);
             System.out.printf("调用第2个future，执行时间是%d%n", System.currentTimeMillis());
-                   throw new RuntimeException("任务2出现了异常");
-//            return 2;
+//                   throw new RuntimeException("任务2出现了异常");
+            return 2;
         });
 
         //对多个ListenableFuture的合并，返回一个当所有Future成功时返回多个Future返回值组成的List对象。
@@ -71,20 +72,10 @@ public class SeniorListenableFutureController {
         }, listeningExecutorService);
 
         // 注册回调事件
-        Futures.addCallback(transform, new FutureCallback<Object>() {
-
-            public void onSuccess(Object result) {
-                System.out.println("进入正确的回调函数");
-                System.out.printf("任务执行的结果是：%s%n", result);
-            }
-
-            public void onFailure(Throwable thrown) {
-                System.out.println("进入错误的回调函数");
-                System.out.printf("系统出错了，错误原因是：%s%n", thrown.getMessage());
-            }
-        }, listeningExecutorService);
+        Futures.addCallback(transform, new FutureCallBackTask(), listeningExecutorService);
 
         long end = System.currentTimeMillis();
         System.out.printf("接口总耗时%d毫秒%n", end - start);
+        System.out.println("-----------------------华丽的分割线-----------------------");
     }
 }
