@@ -24,7 +24,7 @@ import java.util.List;
  *  makeChecked: 将ListenableFuture 转换成CheckedFuture。CheckedFuture 是一个ListenableFuture 。
  *  其中包含了多个版本的get 方法，方法声明抛出检查异常.这样使得创建一个在执行逻辑中可以抛出异常的Future更加容易
  *
- *  JdkFutureAdapters.listenInPoolThread(future): guava同时提供了将JDK Future转换为ListenableFuture的接口函数。
+ *  JdkFutureAdapters.listenInPoolThread(jdkthread): guava同时提供了将JDK Future转换为ListenableFuture的接口函数。
  */
 @RestController
 public class SeniorListenableFutureController {
@@ -65,7 +65,7 @@ public class SeniorListenableFutureController {
              */
             @Override
             public ListenableFuture<String> apply(@Nullable List<Integer> input) {
-                // 立即返回一个待返回值的ListenableFuture
+                // 立即返回一个带返回值的ListenableFuture
                 // 这里可以对input进行复杂的处理，返回最终的一个结果  比如：对团单详情，团单优惠，团单使用范围进行组装
                 return Futures.immediateFuture(String.format("执行成功的任务的数量是:%d", input.size()));
             }

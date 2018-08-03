@@ -1,4 +1,4 @@
-package com.yunxi.yunxiguavathread.test.future;
+package com.yunxi.yunxiguavathread.test.jdkthread;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
