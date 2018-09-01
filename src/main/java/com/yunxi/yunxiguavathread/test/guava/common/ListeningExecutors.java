@@ -1,4 +1,4 @@
-package com.yunxi.yunxiguavathread.test.common;
+package com.yunxi.yunxiguavathread.test.guava.common;
 
 import com.google.common.util.concurrent.ListeningExecutorService;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -8,7 +8,9 @@ import org.springframework.stereotype.Component;
 import java.util.concurrent.Executors;
 
 /**
- * 公用的线程池
+ * @Author: 无双老师
+ * @Date: 2018/9/1 10:52
+ * @Description: 公用的线程池
  */
 @Component
 public class ListeningExecutors {
@@ -16,9 +18,6 @@ public class ListeningExecutors {
     @Bean
     public ListeningExecutorService createListeningExecutorService() {
         // 创建线程池
-        ListeningExecutorService listeningExecutorService = MoreExecutors.
-                listeningDecorator(Executors.newFixedThreadPool(10));
-
-        return listeningExecutorService;
+        return MoreExecutors.listeningDecorator(Executors.newFixedThreadPool(10));
     }
 }

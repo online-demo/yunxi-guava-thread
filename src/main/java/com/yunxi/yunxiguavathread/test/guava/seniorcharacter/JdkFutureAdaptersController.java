@@ -1,7 +1,7 @@
-package com.yunxi.yunxiguavathread.test.seniorcharacter;
+package com.yunxi.yunxiguavathread.test.guava.seniorcharacter;
 
 import com.google.common.util.concurrent.*;
-import com.yunxi.yunxiguavathread.test.common.FutureCallBackTask;
+import com.yunxi.yunxiguavathread.test.guava.common.FutureCallBackTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

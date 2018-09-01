@@ -1,47 +1,68 @@
 package com.yunxi.yunxiguavathread.test.jdkthread;
 
+import com.yunxi.yunxiguavathread.test.service.OuterService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.*;
 
 /**
- * JDK 线程测试
+ * @Author: 无双老师
+ * @Date: 2018/9/1 09:45
+ * @Description: JDK多线程操作演示
  */
 @RestController
 public class JdkThreadController {
 
+    @Resource
+    private OuterService outerService;
+
     @RequestMapping("/test/jdk")
-    public void execute() throws ExecutionException, InterruptedException {
+    public Map<String, Object> execute() throws ExecutionException, InterruptedException {
         // 固定大小的线程池 核心线程数和最大线程数=10
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         // 记录开始时间
         Long start = System.currentTimeMillis();
-        // 一个耗时的任务
-        Future<Boolean> future = executorService.submit(new Callable<Boolean>() {
-            /**
-             * Computes a result, or throws an exception if unable to do so.
-             *
-             * @return computed result
-             * @throws Exception if unable to compute a result
-             */
+        // 异步调用用户服务
+        Future<Long> userServiceFuture = executorService.submit(new Callable<Long>() {
             @Override
-            public Boolean call() throws Exception {
-                //模拟耗时5s
-                Thread.sleep(5000);
-                return true;
+            public Long call() throws Exception {
+                return outerService.userService();
             }
         });
-
+        // 异步调用订单服务
+        Future<Long> orderServiceFuture = executorService.submit(new Callable<Long>() {
+            @Override
+            public Long call() throws Exception {
+                return outerService.orderService();
+            }
+        });
+        // 异步调用商品服务
+        Future<Long> itemServiceFuture = executorService.submit(new Callable<Long>() {
+            @Override
+            public Long call() throws Exception {
+                return outerService.itemService();
+            }
+        });
         // 阻塞 等待执行结果
-        Boolean result = future.get();
-        //打印结果
-        System.out.println("任务执行成功了，执行结果=" + result);
-        // 记录结束时间
-        Long end = System.currentTimeMillis();
-        // 执行时间
-        System.out.println("线程执行结束了，耗时=" + (end - start) + "毫秒");
-        System.out.println("-----------------------华丽的分割线-----------------------");
+        long userServiceResult = userServiceFuture.get();
+        long orderServiceResult = orderServiceFuture.get();
+        long itemServiceResult = itemServiceFuture.get();
+
+        //结束调用的时间
+        long end = System.currentTimeMillis();
+        //计算结果
+        long result = userServiceResult + orderServiceResult + itemServiceResult;
+        String time = "总调用时间是：" + (end - start) + "毫秒";
+        //为什么要初始化4个容量的Map
+        Map<String, Object> resultMap = new HashMap<>(4);
+        resultMap.put("time", time);
+        resultMap.put("result", result);
+        //结果
+        return resultMap;
     }
 }
 

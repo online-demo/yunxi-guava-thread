@@ -1,9 +1,11 @@
-package com.yunxi.yunxiguavathread.test.common;
+package com.yunxi.yunxiguavathread.test.guava.common;
 
 import com.google.common.util.concurrent.FutureCallback;
 
 /**
- * ListenableFuture回调任务
+ * @Author: 无双老师
+ * @Date: 2018/9/1 10:54
+ * @Description: ListenableFuture回调任务
  */
 public class FutureCallBackTask implements FutureCallback<Object> {
 

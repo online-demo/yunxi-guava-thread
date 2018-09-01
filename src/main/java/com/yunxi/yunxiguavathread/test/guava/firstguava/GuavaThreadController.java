@@ -1,13 +1,15 @@
-package com.yunxi.yunxiguavathread.test.listenablefuture;
+package com.yunxi.yunxiguavathread.test.guava.firstguava;
 
 import com.google.common.util.concurrent.*;
-import com.yunxi.yunxiguavathread.test.common.FutureCallBackTask;
+import com.yunxi.yunxiguavathread.test.guava.common.FutureCallBackTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Guava 线程测试
+ * @Author: 无双老师
+ * @Date: 2018/9/1 09:45
+ * @Description: Guava 线程简单测试
  */
 @RestController
 public class GuavaThreadController {
@@ -30,7 +32,7 @@ public class GuavaThreadController {
         // 记录结束时间
         Long end = System.currentTimeMillis();
         // 执行时间
-        System.out.println("线程执行结束了，耗时=" + (end - start) + "毫秒");
+        System.out.println("execute()方法执行结束了，耗时=" + (end - start) + "毫秒");
         System.out.println("-----------------------华丽的分割线-----------------------");
     }
 }
