@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @Author: 无双老师
- * @Date: 2018/9/1 09:33
+ * @Date: 2018/10/27 09:33
  * @Description: 模拟一个耗时的服务 如：RPC或者HTTP请求
  */
 @Service
@@ -50,7 +50,7 @@ public class OuterService {
             //模拟耗时3000ms的商品服务
             Thread.sleep(3000);
             //模拟调用超时或者服务异常
-//            throw new RuntimeException("Oh My God, OrderService Exception!!!");
+            // throw new RuntimeException("Oh My God, OrderService Exception!!!");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

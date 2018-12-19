@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.Callable;
+
 /**
  * @Author: 无双老师
- * @Date: 2018/9/1 09:45
+ * @Date: 2018/10/27 09:45
  * @Description: Guava 线程简单测试
  */
 @RestController
@@ -23,7 +25,6 @@ public class GuavaThreadController {
         Long start = System.currentTimeMillis();
         // 一个耗时的任务
         ListenableFuture<Boolean> listenableFuture = listeningExecutorService.submit(() -> {
-            //模拟耗时5s
             Thread.sleep(5000);
             return true;
         });

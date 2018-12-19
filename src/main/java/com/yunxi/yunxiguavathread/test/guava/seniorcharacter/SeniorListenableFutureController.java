@@ -17,7 +17,7 @@ import java.util.concurrent.ExecutionException;
 
 /**
  * @Author: 无双老师
- * @Date: 2018/9/1 09:45
+ * @Date: 2018/10/27 09:45
  * @Description: 高级特性介绍
  * <p>
  * transform：对于ListenableFuture的返回值进行转换。
@@ -74,7 +74,7 @@ public class SeniorListenableFutureController {
         addCallBack(itemServiceFuture);
 
         // .......
-        //对多个ListenableFuture的合并，返回一个当所有Future成功时返回多个Future返回值组成的List对象。
+        // 对多个ListenableFuture的合并，返回一个当所有Future成功时返回多个Future返回值组成的List对象。
         // 注：当其中一个Future失败或者取消的时候，会怎样？
         final ListenableFuture<List<Long>> threeServicesFutures = Futures.successfulAsList(userServiceFuture, orderServiceFuture, itemServiceFuture);
 

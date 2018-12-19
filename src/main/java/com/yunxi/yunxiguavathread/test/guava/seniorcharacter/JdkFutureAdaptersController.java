@@ -12,7 +12,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 /**
- * JdkFutureAdapters.listenInPoolThread(jdkthread): guava同时提供了将JDK Future转换为ListenableFuture的接口函数。
+ * @Author: 无双老师
+ * @Date: 2018/10/27 13:32
+ * @Description:  JdkFutureAdapters.listenInPoolThread(jdkthread)
+ *
+ * guava同时提供了将JDK Future转换为ListenableFuture的接口函数。
  */
 @RestController
 public class JdkFutureAdaptersController {
