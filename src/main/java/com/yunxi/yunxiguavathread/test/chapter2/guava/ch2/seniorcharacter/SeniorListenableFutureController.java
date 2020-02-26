@@ -1,7 +1,6 @@
-package com.yunxi.yunxiguavathread.test.guava.seniorcharacter;
+package com.yunxi.yunxiguavathread.test.chapter2.guava.ch2.seniorcharacter;
 
 import com.google.common.util.concurrent.*;
-import com.yunxi.yunxiguavathread.test.guava.common.FutureCallBackTask;
 import com.yunxi.yunxiguavathread.test.service.OuterService;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,7 @@ import java.util.concurrent.ExecutionException;
 
 /**
  * @Author: 无双老师
- * @Date: 2018/10/27 09:45
+ * @Date: 2020年02月26日19:52:48
  * @Description: 高级特性介绍
  * <p>
  * transform：对于ListenableFuture的返回值进行转换。

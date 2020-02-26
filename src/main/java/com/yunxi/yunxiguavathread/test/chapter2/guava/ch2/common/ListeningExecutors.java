@@ -1,4 +1,4 @@
-package com.yunxi.yunxiguavathread.test.guava.common;
+package com.yunxi.yunxiguavathread.test.chapter2.guava.ch2.common;
 
 import com.google.common.util.concurrent.ListeningExecutorService;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 
 /**
  * @Author: 无双老师
- * @Date: 2018/10/27 10:52
+ * @Date: 2020年02月26日19:53:49
  * @Description: 公用的线程池
  */
 @Component

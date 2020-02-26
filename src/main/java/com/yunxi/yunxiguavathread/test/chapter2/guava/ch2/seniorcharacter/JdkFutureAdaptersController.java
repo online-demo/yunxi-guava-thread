@@ -1,7 +1,7 @@
-package com.yunxi.yunxiguavathread.test.guava.seniorcharacter;
+package com.yunxi.yunxiguavathread.test.chapter2.guava.ch2.seniorcharacter;
 
 import com.google.common.util.concurrent.*;
-import com.yunxi.yunxiguavathread.test.guava.common.FutureCallBackTask;
+import com.yunxi.yunxiguavathread.test.chapter2.guava.ch2.common.FutureCallBackTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +13,7 @@ import java.util.concurrent.Future;
 
 /**
  * @Author: 无双老师
- * @Date: 2018/10/27 13:32
+ * @Date: 2020年02月26日19:50:33
  * @Description:  JdkFutureAdapters.listenInPoolThread(jdkthread)
  *
  * guava同时提供了将JDK Future转换为ListenableFuture的接口函数。

@@ -1,16 +1,14 @@
-package com.yunxi.yunxiguavathread.test.guava.firstguava;
+package com.yunxi.yunxiguavathread.test.chapter2.guava.ch1.firstguava;
 
 import com.google.common.util.concurrent.*;
-import com.yunxi.yunxiguavathread.test.guava.common.FutureCallBackTask;
+import com.yunxi.yunxiguavathread.test.chapter2.guava.ch2.common.FutureCallBackTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.concurrent.Callable;
-
 /**
  * @Author: 无双老师
- * @Date: 2018/10/27 09:45
+ * @Date: 2020年02月26日19:50:16
  * @Description: Guava 线程简单测试
  */
 @RestController

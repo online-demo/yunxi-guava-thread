@@ -1,4 +1,4 @@
-package com.yunxi.yunxiguavathread.test.jdkthread;
+package com.yunxi.yunxiguavathread.test.chapter1.jdkthread;
 
 import com.yunxi.yunxiguavathread.test.service.OuterService;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +11,7 @@ import java.util.concurrent.*;
 
 /**
  * @Author: 无双老师
- * @Date: 2018/10/27 09:45
+ * @Date: 2020年02月26日19:50:52
  * @Description: JDK多线程操作演示
  */
 @RestController
